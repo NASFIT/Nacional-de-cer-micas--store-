@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacional de Cerámicas - Materiales de Construcción Premium</title>
+    <!-- Favicon para la pestaña del navegador -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <!-- Opcional: icono para cuando guardan la web como acceso directo en iPhone/Android -->
+    <link rel="apple-touch-icon" href="img/logo.png">
+    <meta name="description"
+        content="Nacional de Cerámicas - Distribuidor oficial de Corona, Italia, San Lorenzo, Alfa y más. Cerámicas, porcelanas y materiales de construcción premium.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-main">Nacional</span>
+                <span class="logo-sub">de Cerámicas</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+
+                    <!-- Menú desplegable Marcas -->
+                    <li class="nav-dropdown">
+                        <a href="#productos" class="dropdown-toggle">Marcas ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#productos" onclick="filtrarCategoria('Todos')">Todas las Marcas</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="#productos" onclick="filtrarCategoria('Corona')">👑 Corona</a></li>
+                            <li><a href="#productos" onclick="filtrarCategoria('Italia')">🇮🇹 Italia</a></li>
+                            <li><a href="#productos" onclick="filtrarCategoria('San Lorenzo')">⚜️ San Lorenzo</a></li>
+                            <li><a href="#productos" onclick="filtrarCategoria('Alfa')">🔷 Alfa</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <!-- Barra de búsqueda -->
+                <div class="search-box" id="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar producto..." autocomplete="off">
+                    <button class="search-btn" id="search-btn" title="Buscar">🔍</button>
+                </div>
+                <button class="icon-btn" id="cart-btn" title="Carrito">
+                    🛒 <span id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Distribuidores Oficiales</p>
+            <h1>Elegancia en cada <span class="hero-highlight">superficie</span></h1>
+            <p class="hero-sub">Las mejores marcas del mundo en cerámica y porcelana, disponibles para tu proyecto</p>
+            <button class="cta-btn"
+                onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver Catálogo</button>
+        </div>
+        <div class="hero-pattern"></div>
+    </section>
+
+    <!-- PANEL CARRITO -->
+    <div id="cart-panel" class="cart-panel">
+        <div class="cart-header">
+            <h3>Tu Cotización</h3>
+            <button id="close-cart">✖</button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-footer">
+            <h4>Total: $<span id="cart-total">0</span></h4>
+            <button class="checkout-btn">Solicitar Cotización</button>
+        </div>
+    </div>
+
+    <!-- Marcas Strip -->
+    <section class="brands-section" id="marcas">
+        <div class="brands-inner">
+            <p class="brands-label">Marcas que distribuimos</p>
+            <div class="brands-strip">
+                <span>CORONA</span>
+                <span class="divider">◆</span>
+                <span>ITALIA</span>
+                <span class="divider">◆</span>
+                <span>SAN LORENZO</span>
+                <span class="divider">◆</span>
+                <span>ALFA</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="productos">
+        <h2 class="section-title">Catálogo de <span>Productos</span></h2>
+        <div class="products-grid" id="products-container">
+            <!-- Generado dinámicamente desde JavaScript -->
+        </div>
+    </section>
+
+    <!-- Nosotros + Mapa Section -->
+    <section class="nosotros-section" id="nosotros">
+
+        <!-- Beneficios -->
+        <div class="benefits-wrapper">
+            <h2 class="section-title">¿Por qué elegir <span>Nacional de Cerámicas?</span></h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3 class="benefit-title">Marcas Premium</h3>
+                    <p class="benefit-description">Distribuidores oficiales de las marcas más reconocidas y confiables
+                        del mercado cerámico.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📐</div>
+                    <h3 class="benefit-title">Asesoría Especializada</h3>
+                    <p class="benefit-description">Nuestro equipo te acompaña en la selección perfecta para tu proyecto
+                        constructivo o de remodelación.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚚</div>
+                    <h3 class="benefit-title">Entrega Garantizada</h3>
+                    <p class="benefit-description">Logística confiable para que tu pedido llegue en perfectas
+                        condiciones y en el tiempo acordado.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💎</div>
+                    <h3 class="benefit-title">Calidad Certificada</h3>
+                    <p class="benefit-description">Todos nuestros productos cuentan con certificación y garantía de
+                        fábrica.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ubicación + Mapa -->
+        <div class="ubicacion-wrapper">
+            <h2 class="section-title">Encuéntranos <span>aquí</span></h2>
+            <div class="ubicacion-grid">
+
+                <!-- Info de contacto -->
+                <div class="ubicacion-info">
+                    <div class="ubicacion-item">
+                        <div class="ubicacion-icon">📍</div>
+                        <div>
+                            <strong>Dirección</strong>
+                            <p>Carrera 52C # 37A-31 Sur<br>Barrio La Alquería<br>Bogotá D.C., Colombia</p>
+                        </div>
+                    </div>
+                    <div class="ubicacion-item">
+                        <div class="ubicacion-icon">🕒</div>
+                        <div>
+                            <strong>Horario de Atención</strong>
+                            <p>Lunes a Sábado<br>8:00 AM – 5:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="ubicacion-item">
+                        <div class="ubicacion-icon">📱</div>
+                        <div>
+                            <strong>Teléfono / WhatsApp</strong>
+                            <p><a href="https://wa.me/573133564359" target="_blank"
+                                    style="color:inherit;text-decoration:none;">+57 313 356 4359</a></p>
+                        </div>
+                    </div>
+                    <div class="ubicacion-item">
+                        <div class="ubicacion-icon">📧</div>
+                        <div>
+                            <strong>Correo</strong>
+                            <p><a href="mailto:edwincifuentes83@gmail.com"
+                                    style="color:inherit;text-decoration:none;">edwincifuentes83@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <a class="ubicacion-cta"
+                        href="https://www.google.com/maps/dir/?api=1&destination=Carrera+52C+%2337A-31+Sur,+Bogot%C3%A1,+Colombia"
+                        target="_blank">
+                        🗺️ Cómo llegar
+                    </a>
+                </div>
+
+                <!-- Mapa embebido -->
+                <div class="mapa-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.0!2d-74.1243!3d4.5821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9f0000000000%3A0x0!2sCarrera+52C+%2337A-31+Sur%2C+La+Alquer%C3%ADa%2C+Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco"
+                        width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación Nacional de Cerámicas">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <span class="footer-logo-main">Nacional</span>
+                    <span class="footer-logo-sub">de Cerámicas</span>
+                </div>
+                <p style="color:#c0c0c0;margin-top:1rem;">Tu aliado de confianza en materiales cerámicos y porcelana
+                    premium.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#marcas">Marcas</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul class="footer-links">
+                    <li>📧 <a href="mailto:edwincifuentes83@gmail.com">edwincifuentes83@gmail.com</a></li>
+                    <li>📱 <a href="https://wa.me/573133564359" target="_blank"
+                            style="color:inherit;text-decoration:none;">+57 313 356 4359 (WhatsApp)</a></li>
+                    <li>📍 Colombia</li>
+                    <li>🕒 Lun-Sáb: 8:00 - 18:00</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Medios de Pago</h3>
+                <div class="footer-pagos">
+                    <div class="pago-tag">💜 Nequi</div>
+                    <div class="pago-tag">🔴 Daviplata</div>
+                    <div class="pago-tag">🏦 Transferencia Bancaria</div>
+                    <div class="pago-tag">💳 Codensa</div>
+                    <div class="pago-tag">💳 Visa</div>
+                    <div class="pago-tag">💳 Mastercard</div>
+                    <div class="pago-tag">💳 Amex</div>
+                    <div class="pago-tag">🧾 PSE</div>
+                    <div class="pago-tag">⚡ Vanti</div>
+                    <div class="pago-tag">🏪 Efectivo</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <p class="copyright">&copy; 2026 Nacional de Cerámicas. Todos los derechos reservados.</p>
+                <p class="developer-credit">
+                    Sitio web desarrollado por <a href="https://www.linkedin.com/in/alejandrofandino-dev"
+                        target="_blank" rel="noopener noreferrer">Ing-Alejandro Fandiño</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DETALLE PRODUCTO -->
+    <div id="modal-overlay" class="modal-overlay"></div>
+    <div id="product-modal" class="product-modal">
+        <button id="modal-close" class="modal-close">✖</button>
+        <div class="modal-body">
+
+            <!-- Imagen -->
+            <div class="modal-left">
+                <div id="modal-img" class="modal-img-wrap"></div>
+            </div>
+
+            <!-- Info + Calculadora -->
+            <div class="modal-right">
+                <span class="modal-marca" id="modal-marca"></span>
+                <h2 id="modal-nombre"></h2>
+
+                <div class="modal-meta">
+                    <div><span>Código:</span> <strong id="modal-codigo"></strong></div>
+                    <div><span>Medidas:</span> <strong id="modal-medidas"></strong></div>
+                    <div><span>Color:</span> <strong id="modal-color"></strong></div>
+                </div>
+
+                <!-- Precios unitarios -->
+                <div class="modal-precios-row">
+                    <div class="modal-precio-box">
+                        <span id="modal-precio-m2"></span>
+                        <small>por M²</small>
+                    </div>
+                </div>
+                <p class="modal-precio-aviso">⚠️ Precio sujeto a cambios. Consulta disponibilidad.</p>
+
+                <!-- Calculadora -->
+                <p class="calc-label">Ingresa los metros cuadrados que necesitas:</p>
+                <div class="calc-row">
+                    <div class="calc-group">
+                        <button id="btn-m2-menos" class="calc-btn">◀</button>
+                        <input type="number" id="calc-m2" min="1" value="1">
+                        <button id="btn-m2-mas" class="calc-btn">▶</button>
+                        <span class="calc-unit">M²</span>
+                    </div>
+                </div>
+
+                <div class="calc-nota">⚠️ Recomendamos agregar un 10% adicional por recortes.</div>
+
+                <div class="calc-totales">
+                    <div>Metros a cotizar: <strong id="calc-total-m2">—</strong></div>
+                    <div class="calc-precio-total">Precio estimado: <strong id="calc-total-precio">—</strong></div>
+                </div>
+
+                <button id="modal-add-cart" class="modal-add-btn">🛒 Añadir a cotización</button>
+                <button id="modal-direct-quote" class="modal-direct-btn">💬 Cotizar este producto por WhatsApp</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- MODAL COTIZACIÓN -->
+    <div id="cotizacion-overlay" class="cotizacion-overlay"></div>
+    <div id="cotizacion-modal" class="cotizacion-modal">
+        <button id="cotizacion-close" class="cotizacion-close">✖</button>
+        <div class="cotizacion-header">
+            <h2>Solicitar Cotización</h2>
+            <p>Completa tus datos para enviar tu cotización directamente por WhatsApp</p>
+        </div>
+
+        <!-- Resumen del carrito -->
+        <div class="cotizacion-resumen" id="cotizacion-resumen"></div>
+
+        <!-- Formulario -->
+        <form class="cotizacion-form" id="cotizacion-form">
+            <div class="cotizacion-field">
+                <label for="cot-nombre">Nombre completo *</label>
+                <input type="text" id="cot-nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="cotizacion-field">
+                <label for="cot-celular">Celular / WhatsApp *</label>
+                <input type="tel" id="cot-celular" name="celular" placeholder="+57 313 000 0000" required>
+            </div>
+            <div class="cotizacion-field">
+                <label for="cot-correo">Correo electrónico *</label>
+                <input type="email" id="cot-correo" name="correo" placeholder="tucorreo@email.com" required>
+            </div>
+            <div class="cotizacion-field">
+                <label for="cot-mensaje">Mensaje adicional (opcional)</label>
+                <textarea id="cot-mensaje" name="mensaje"
+                    placeholder="¿Tienes alguna pregunta o detalle adicional?"></textarea>
+            </div>
+            <div id="cotizacion-error" class="cotizacion-error" style="display:none;"></div>
+            <button type="submit" id="cotizacion-enviar" class="cotizacion-enviar-btn">
+                <span id="cotizacion-btn-text">💬 Enviar a WhatsApp</span>
+            </button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

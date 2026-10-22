@@ -1,0 +1,21 @@
+{
+  "name": "nacional-de-ceramicas",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de Nacional de Cerámicas",
+  "scripts": {
+    "dev": "serve www -p 3000",
+    "start": "serve www -p 3000",
+    "build": "echo \"Sitio web estático listo en carpeta www/\""
+  },
+  "keywords": [
+    "ceramicas",
+    "porcelanato",
+    "corona",
+    "distribuidor"
+  ],
+  "author": "Nacional de Cerámicas",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}
